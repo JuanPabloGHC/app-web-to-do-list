@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2>COMPLETED '{{response.countCompleted}}'</h2>
+        <ul>
+            {% for task in response.completed %}
+                <li>
+                    {{task.id}} - {{task.name}} - {{task.status}}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2>INCOMPLETED '{{response.countIncompleted}}'</h2>
+        <ul>
+            {% for task in response.incompleted %}
+                <li>
+                    {{task.id}} - {{task.name}} - {{task.status}}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        <form method="post">
+            <div>
+                <input type="text" name="name" id="name" placeholder="Write your task...">
+            </div>
+            <div>
+                <button type="submit">Agregar tarea</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
