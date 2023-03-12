@@ -21,16 +21,60 @@
             {% endfor %}
         </ul>
     </div>
-
-    <div>
-        <form method="post">
-            <div>
-                <input type="text" name="name" id="name" placeholder="Write your task...">
-            </div>
-            <div>
-                <button type="submit">Agregar tarea</button>
-            </div>
-        </form>
+    <!--POST-->
+    <div id="Agregar" style="display: '';">
+        <div>
+            <br>
+            <h3>Agregar Tarea</h3>
+        </div>
+        <div>
+            <form method="post">
+                <div>
+                    <input type="text" name="name" id="name" placeholder="Write your task...">
+                </div>
+                <div>
+                    <button type="submit">Agregar tarea</button>
+                </div>
+            </form>
+        </div>
     </div>
+    <!--PUT-->
+    <div id="Editar" style="display: '';">
+        <div>
+            <br>
+            <h3>EditarTarea</h3>
+        </div>
+        <div>
+            <form method="put">
+                <div>
+                    <input type="text" name="name2" id="name2" placeholder="Write your new task...">
+                </div>
+                <div>
+                    <input type="text" name="status" id="status" placeholder="Write your new status...">
+                </div>
+                <div>
+                    <button type="submit">Editar tarea</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--DELETE-->
+    <div id="Eliminar" style="display: '';">
+        <div>
+            <br>
+            <h3>Eliminar Tarea</h3>
+        </div>
+        <div>
+            <form method="delete">
+                <div>
+                    <input type="text" name="id" id="id" placeholder="Write your id...">
+                </div>
+                <div>
+                    <button type="submit">Eliminar tarea</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
 
 {% endblock %}
