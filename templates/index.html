@@ -1,25 +1,63 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <h2>COMPLETED '{{response.countCompleted}}'</h2>
-        <ul>
-            {% for task in response.completed %}
-                <li>
-                    {{task.id}} - {{task.name}} - {{task.status}}
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div>
-        <h2>INCOMPLETED '{{response.countIncompleted}}'</h2>
-        <ul>
-            {% for task in response.incompleted %}
-                <li>
-                    {{task.id}} - {{task.name}} - {{task.status}}
-                </li>
-            {% endfor %}
-        </ul>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <h2>COMPLETED '{{response.countCompleted}}'</h2>
+                        <div class="list-group w-auto">
+                            {% for task in response.completed %}
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                    <!--<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">-->
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0">{{task.id}}</h6>
+                                        <p class="mb-0 opacity-75">{{task.name}}</p>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">{{task.status}}</small>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                        <!--<ul>
+                            {% for task in response.completed %}
+                                <li>
+                                    {{task.id}} - {{task.name}} - {{task.status}}
+                                </li>
+                            {% endfor %}
+                        </ul>-->
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <h2>INCOMPLETED '{{response.countIncompleted}}'</h2>
+                        <div class="list-group w-auto">
+                            {% for task in response.incompleted %}
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                    <!--<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">-->
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0">{{task.id}}</h6>
+                                        <p class="mb-0 opacity-75">{{task.name}}</p>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">{{task.status}}</small>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                        <!--<ul>
+                            {% for task in response.incompleted %}
+                                <li>
+                                    {{task.id}} - {{task.name}} - {{task.status}}
+                                </li>
+                            {% endfor %}
+                        </ul>-->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!--POST-->
     <div id="Agregar" style="display: '';">
