@@ -38,11 +38,12 @@ def home():
         return render_template('index.html', response=response)
     else:   #POST
         name = request.form['name']
-        try:
-            requests.post(url, json={"name":name})
-            return redirect('/')
-        except:
-            return abort(500)
+        if(name != ""):
+            try:
+                requests.post(url, json={"name":name})
+                return redirect('/')
+            except:
+                return abort(500)
 
 if __name__ == '__main__':
     app.run(debug=True)
