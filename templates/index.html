@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="text-center">
+        <h1>TO DO LIST</h1>
+    </div>
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 g-3">
                 <div class="col">
-                    <div class="card shadow-sm">
-                        <h2>COMPLETED '{{response.countCompleted}}'</h2>
+                    <div class="card shadow-sm text-center">
+                        <div class="text-center">
+                            <h2>COMPLETED '{{response.countCompleted}}'</h2>
+                        </div>
                         <div class="list-group w-auto">
                             {% for task in response.completed %}
                                 <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
@@ -32,7 +37,9 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <h2>INCOMPLETED '{{response.countIncompleted}}'</h2>
+                        <div class="text-center">
+                            <h2>INCOMPLETED '{{response.countIncompleted}}'</h2>
+                        </div>
                         <div class="list-group w-auto">
                             {% for task in response.incompleted %}
                                 <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
@@ -60,20 +67,22 @@
         </div>
     </div>
     <!--POST-->
-    <div id="Agregar" style="display: '';">
-        <div>
-            <br>
-            <h3>Agregar Tarea</h3>
-        </div>
-        <div>
-            <form method="post">
-                <div>
-                    <input type="text" name="name" id="name" placeholder="Write your task...">
-                </div>
-                <div>
-                    <button type="submit">Agregar tarea</button>
-                </div>
-            </form>
+    <div class="text-center">
+        <div id="Agregar" style="display: '';">
+            <div>
+                <br>
+                <h3>Agregar Tarea</h3>
+            </div>
+            <div>
+                <form method="post">
+                    <div>
+                        <input type="text" name="name" id="name" placeholder="Write your task...">
+                    </div>
+                    <div>
+                        <button type="submit">Agregar tarea</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <!--PUT-->
