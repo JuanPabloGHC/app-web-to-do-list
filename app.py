@@ -6,8 +6,8 @@ import requests
 
 app = Flask(__name__)
 
-#url = 'https://to-do-list-api-ldkz.onrender.com/api/tasks'
-url = 'http://127.0.0.1:5000/api/tasks'
+url = 'https://to-do-list-api-ldkz.onrender.com/api/tasks'
+#url = 'http://127.0.0.1:5000/api/tasks'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -72,4 +72,5 @@ def delete(id):
     return redirect('/')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True)
+    #app.run(debug=True, port=5001)
