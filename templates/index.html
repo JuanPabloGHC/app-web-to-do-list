@@ -14,23 +14,28 @@
                         </div>
                         <div class="list-group w-auto">
                             {% for task in response.completed %}
-                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                                    <!--<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">-->
+                                <div class="list-group-item list-group-item-action d-flex gap-3">
                                     <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0">{{task.id}}</h6>
-                                        <p class="mb-0 opacity-75">{{task.name}} 
-                                            <button type="submit">
-                                                <i class="bi bi-bookmark-dash"></i>  
-                                            </button>
-                                            <button type="submit">
-                                                <i class="bi bi-clipboard-x"></i> 
-                                            </button>
-                                        </p>
+                                        <div>
+                                            <div>
+                                                <!-- <h6 class="mb-0">{{task.id}}</h6> -->
+                                                <h6 class="mb-0 opacity-75">{{task.name}}</h6>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-1">
+                                            <div>
+                                                <a href="/update_incomp/{{task.id}}" class="btn btn-warning">
+                                                    <i class="bi bi-bookmark-dash d-flex align-items-center" style="font-size: 1.5em;"></i>  
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="/delete/{{task.id}}" class="btn btn-danger">
+                                                    <i class="bi bi-clipboard-x"></i>                                            
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                        <small class="opacity-50 text-nowrap">{{task.status}}</small>
-                                    </div>
-                                </a>
+                                </div>
                             {% endfor %}
                         </div>
                         <!--<ul>
@@ -49,23 +54,29 @@
                         </div>
                         <div class="list-group w-auto">
                             {% for task in response.incompleted %}
-                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                                    <!--<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">-->
+                                <div class="list-group-item list-group-item-action d-flex gap-3">
                                     <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0">{{task.id}}</h6>
-                                        <p class="mb-0 opacity-75">{{task.name}} 
-                                            <button type="submit">
-                                                <i class="bi bi-bookmark-check"></i>  
-                                            </button>
-                                            <button type="submit">
-                                                <i class="bi bi-clipboard-x"></i>
-                                            </button>
-                                        </p>
+                                        <div>
+                                            <div>
+                                                <!-- <h6 class="mb-0">{{task.id}}</h6> -->
+                                                <h6 class="mb-0 opacity-75">{{task.name}}</h6>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-1">
+                                            <div>
+                                                <a href="/update_comp/{{task.id}}" class="btn btn-success">
+                                                    <i class="bi bi-bookmark-check d-flex align-items-center" style="font-size: 1.5em;"></i>  
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="/delete/{{task.id}}" class="btn btn-danger">
+                                                    <i class="bi bi-clipboard-x"></i>                                            
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                        <small class="opacity-50 text-nowrap">{{task.status}}</small>
-                                    </div>
-                                </a>
+                                </div>
+                                <!-- </a> -->
                             {% endfor %}
                         </div>
                         <!--<ul>
